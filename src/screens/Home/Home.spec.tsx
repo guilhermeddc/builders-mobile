@@ -1,5 +1,7 @@
-import {act, fireEvent, render} from '@testing-library/react-native';
 import React from 'react';
+
+import {act, fireEvent, render} from '@testing-library/react-native';
+
 import {Home} from '.';
 
 describe('Home', () => {

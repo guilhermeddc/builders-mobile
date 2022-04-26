@@ -1,5 +1,7 @@
 import React from 'react';
+
 import {convertFahrenheitToCelsius} from 'shared/utils/convertFahrenheitToCelsius';
+
 import {Circle, Text} from './styles';
 
 type IProps = {

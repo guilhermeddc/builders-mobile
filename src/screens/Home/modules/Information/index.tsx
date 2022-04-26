@@ -1,6 +1,8 @@
 import React from 'react';
+
 import {outono, solta} from 'shared/assets';
 import {convertMilesToKilometers} from 'shared/utils/convertMilesToKilometers';
+
 import {Wrapper, H4, Body2, Box, Stack, Image} from './styles';
 
 type IProps = {

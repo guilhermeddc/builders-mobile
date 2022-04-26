@@ -1,6 +1,11 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import * as Location from 'expo-location';
+import {ActivityIndicator} from 'react-native';
 
+import * as Location from 'expo-location';
+import {addressService} from 'shared/services/api/addressService';
+import {weatherService} from 'shared/services/api/weatherService';
+
+import {Degrees, Information} from './modules';
 import {
   Button,
   Container,
@@ -9,10 +14,6 @@ import {
   Title,
   Subtitle,
 } from './styles';
-import {Degrees, Information} from './modules';
-import {weatherService} from 'shared/services/api/weatherService';
-import {addressService} from 'shared/services/api/addressService';
-import {ActivityIndicator} from 'react-native';
 
 export function Home() {
   const [loading, setLoading] = useState(false);
@@ -24,19 +25,19 @@ export function Home() {
   useEffect(() => {
     if (position.lat === 0 && position.lon === 0)
       (async () => {
-        let {status} = await Location.requestForegroundPermissionsAsync();
+        const {status} = await Location.requestForegroundPermissionsAsync();
         if (status !== 'granted') {
           setErrorMsg('Permission to access location was denied');
           return;
         }
 
-        let location = await Location.getCurrentPositionAsync({});
+        const location = await Location.getCurrentPositionAsync({});
         setPosition({
           lat: location.coords.latitude,
           lon: location.coords.longitude,
         });
       })();
-  }, []);
+  }, [position.lat, position.lon]);
 
   const getData = useCallback(async () => {
     try {
