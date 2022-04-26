@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Degrees should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#0d0c9a",
+        "borderRadius": 125,
+        "height": 250,
+        "justifyContent": "center",
+        "marginTop": 32,
+        "width": 250,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#fff",
+          "fontSize": 54,
+          "fontWeight": "400",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    -273.15
+    ˚C
+  </Text>
+</View>
+`;
